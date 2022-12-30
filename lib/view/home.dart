@@ -26,6 +26,7 @@ class _HomePageViewState extends State<HomePageView> {
         itemCount: 10,
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
+          FetchNews.fetchNews();
           return NewsContainerView(imgUrl: "https://images.pexels.com/photos/96627/pexels-photo-96627.jpeg?auto=compress&cs=tinysrgb&w=1600",newsDes: "News Description",newsHead: "News Heading",newsUrl: "$index",);
         },
       ),

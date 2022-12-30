@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 //https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=d9ee857193974766bda9fbab33d7cd0b
@@ -44,6 +43,7 @@ print(element);
     String http = "https://newsapi.org/v2/top-headlines?sources=${element}&apiKey=d9ee857193974766bda9fbab33d7cd0b";
     Response response = await get(Uri.parse(http));
     Map body_data = jsonDecode(response.body);
-    print(body_data);
+    List articles = body_data["articles"];
+    print(articles);
   }
 }
